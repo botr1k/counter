@@ -69,7 +69,7 @@ export const SettingsCounter = (props: Props) => {
           <Input id='max' type="number" value={maxValue} onChange={changeMaxValueHandler}/>
         </div>
 
-        <Button className='w-full' onClick={toggleSettings}>Сохранить и вернуться</Button>
+        <Button className='w-full' onClick={toggleSettings} disabled={!!error}>Сохранить и вернуться</Button>
 
       </div>
   );
