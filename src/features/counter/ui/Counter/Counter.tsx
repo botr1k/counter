@@ -5,6 +5,7 @@ import {useAppDispatch, useAppSelector} from "@/app/hooks.ts";
 import {useEffect} from "react";
 import {selectCounter} from "../../model/counter-select.ts";
 import {Card, CardContent, CardHeader, CardTitle} from "@/common/components/card.tsx";
+import {ModeToggle} from "@/common/components/mood-toggle.tsx";
 
 export type CounterState = {
   value: number
@@ -30,8 +31,9 @@ export const Counter = () => {
 
   return (
       <Card className="w-full max-w-md mx-auto">
-        <CardHeader>
+        <CardHeader className='flex flex-row items-center justify-between'>
           <CardTitle>{counter.isSettingsOpen ? "Настройки счётчика" : "Счётчик"}</CardTitle>
+          <ModeToggle/>
         </CardHeader>
         <CardContent>
           {
